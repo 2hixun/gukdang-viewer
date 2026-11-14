@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>국당배어 열람 파일럿</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@400;600&family=Noto+Serif+TC:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app">
+  <nav class="stories" aria-label="화 목록">
+    <div class="brand">
+      <span class="han" id="brand-title">菊堂排語</span>
+      <span class="sub" id="brand-sub">국당배어 열람 파일럿</span>
+    </div>
+    <ol class="story-list" id="story-list"></ol>
+  </nav>
+
+  <main>
+    <article class="reader" id="reader">
+      <header class="story-head">
+        <div class="head-row">
+          <div>
+            <div class="eyebrow" id="eyebrow"></div>
+            <h1 id="story-title"></h1>
+          </div>
+          <div class="pager">
+            <button type="button" id="prev">← 이전 화</button>
+            <button type="button" id="next">다음 화 →</button>
+          </div>
+        </div>
+        <div class="story-meta" id="story-meta"></div>
+      </header>
+
+      <div class="text" id="text" lang="lzh"></div>
+      <div class="parallels" id="parallels"></div>
+
+      <section class="tl-wrap" aria-labelledby="tl-title">
+        <h2 class="sec-title" id="tl-title">이 화의 시간과 인물</h2>
+        <p class="sec-note">시간 표지의 정규화 값과 인물의 생몰년을 한 축에 놓았습니다. 항목에 커서를 올리면 본문의 해당 부분이 표시되고, 누르면 그 자리로 이동합니다. 흐린 막대는 추정 값, 끝이 흐려지는 막대는 한쪽만 확정된 값입니다.</p>
+        <div id="timeline"></div>
+      </section>
+
+      <p class="foot" id="source-desc"></p>
+    </article>
+  </main>
+
+  <aside class="panel" aria-label="범례와 데이터 정보">
+    <section aria-labelledby="legend-title">
+      <div class="legend-head">
+        <h2 class="sec-title" id="legend-title">범례 · 표시 선택</h2>
+        <span><button type="button" class="mini" id="all-on">모두 켜기</button><button type="button" class="mini" id="all-off">모두 끄기</button></span>
+      </div>
+      <p class="sec-note">항목을 눌러 본문 표시를 켜고 끕니다. 숫자는 현재 화에 나오는 개수입니다.</p>
+      <div id="legend"></div>
+    </section>
+
+    <details id="issues-box">
+      <summary id="issues-summary">데이터 점검</summary>
+      <p class="sec-note" style="margin-top:8px">XML을 읽으면서 자동으로 찾은 항목입니다. 간지는 서기 값으로 계산해 원문과 대조했습니다.</p>
+      <ul class="issues" id="issues"></ul>
+    </details>
+
+    <details>
+      <summary>마크업 규칙</summary>
+      <ol class="rules" id="rules"></ol>
+    </details>
+
+    <section class="loader">
+      <h2 class="sec-title">다른 TEI 파일로 보기</h2>
+      <span>같은 규칙으로 마크업한 XML 파일을 열면 이 화면에서 바로 읽습니다. 파일은 이 브라우저 안에서만 쓰이고 저장되지 않습니다.</span>
+      <input type="file" id="file" accept=".xml,application/xml,text/xml">
+      <label for="file">XML 파일 열기</label>
+      <span id="load-status"></span>
+    </section>
+  </aside>
+</div>
+
+<div id="tip" role="tooltip" hidden></div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

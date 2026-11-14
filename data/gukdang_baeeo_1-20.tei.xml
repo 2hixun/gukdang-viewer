@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="lzh">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>菊堂排語 1~20話 (시간표지·인물 마크업 파일럿)</title>
+        <author>鄭泰齊 (1612—1669)</author>
+      </titleStmt>
+      <publicationStmt>
+        <p>인문텍스트분석 발표용 파일럿 데이터</p>
+      </publicationStmt>
+      <sourceDesc>
+        <p>국립중앙도서관 소장본(유일본). 국립중앙도서관 영인 이미지 OCR → 원본 촬영 이미지 대조 교정 → 표점.</p>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <editorialDecl>
+        <p>마크업 규칙 (파일럿 v0.1)</p>
+        <list>
+          <item><gi>date</gi> @type —
+            reign(묘호·朝: 宣廟朝, 光海朝) /
+            era(연호+간지: 萬曆辛卯) /
+            ganzhi(간지 단독: 壬辰, 癸巳 — 문맥으로 서기 비정) /
+            event(사건명: 壬辰之變, 癸亥之反正) /
+            relative(상대표현: 明年, 五月, 壬辰年前) /
+            period(왕대 밖 시기: 高麗末) /
+            present(서술자 현재: 今, 至今, 近來 — 값을 부여하지 않음)</item>
+          <item>정규화 값: 한 해는 @when, 기간은 @from/@to, 한쪽만 확정되면 @notBefore/@notAfter. 연 단위(서기)만 부여하며 음력 월은 환산하지 않음.</item>
+          <item>@cert — 비정의 확실성 (high/medium/low). 생략 시 high로 간주.</item>
+          <item><gi>persName</gi> @role — main(이야기의 주요 행위자) / sub(등장·관여 인물) / ref(언급만 되는 고대·전설 인물: 서사 시간 판단에서 제외)</item>
+          <item>@ref는 <gi>standOff</gi>의 <gi>listPerson</gi>에 연결. 생몰년은 <gi>birth</gi>/<gi>death</gi>@when에 둠.</item>
+        </list>
+      </editorialDecl>
+    </encodingDesc>
+  </teiHeader>
+
+  <standOff>
+    <!-- 생몰년은 한국역대인물종합정보시스템 등으로 교차 확인할 것 -->
+    <listPerson>
+      <!-- 국왕 -->
+      <person xml:id="k_Sejong"><persName>세종 世宗</persName><birth when="1397"/><death when="1450"/></person>
+      <person xml:id="k_Sejo"><persName>세조 世祖</persName><birth when="1417"/><death when="1468"/></person>
+      <person xml:id="k_Seongjong"><persName>성종 成宗</persName><birth when="1457"/><death when="1494"/></person>
+      <person xml:id="k_Danjong"><persName>단종 端宗(魯陵)</persName><birth when="1441"/><death when="1457"/></person>
+      <person xml:id="k_Seonjo"><persName>선조 宣祖</persName><birth when="1552"/><death when="1608"/></person>
+      <!-- 조선 인물 -->
+      <person xml:id="p_ParkSun"><persName>박순 朴淳</persName><birth when="1523"/><death when="1589"/></person>
+      <person xml:id="p_YangHui"><persName>양희 梁喜</persName><birth when="1515" cert="medium"/><death when="1580" cert="medium"/></person>
+      <person xml:id="p_RyuSeongryong"><persName>유성룡 柳成龍</persName><birth when="1542"/><death when="1607"/></person>
+      <person xml:id="p_LeeHangbok"><persName>이항복 李恒福</persName><birth when="1556"/><death when="1618"/></person>
+      <person xml:id="p_Uiin"><persName>의인왕후 懿仁王后</persName><birth when="1555"/><death when="1600"/></person>
+      <person xml:id="p_JeongJak"><persName>정작 鄭碏</persName><birth when="1533"/><death when="1603"/></person>
+      <person xml:id="p_KangChan"><persName>강찬 姜燦</persName><birth when="1557"/><death when="1603"/></person>
+      <person xml:id="p_JoIn"><persName>조인 曹認</persName><note>인물 비정 필요</note></person>
+      <person xml:id="p_ChoeMuseon"><persName>최무선 崔茂宣</persName><birth when="1325"/><death when="1395"/></person>
+      <person xml:id="p_HongSuneon"><persName>홍순언 洪純彦</persName><birth when="1530" cert="medium"/><death when="1598" cert="medium"/></person>
+      <person xml:id="p_HwangJeonguk"><persName>황정욱 黃廷彧</persName><birth when="1532"/><death when="1607"/></person>
+      <person xml:id="p_HongHyoson"><persName>홍효손 洪孝孫</persName><note>생몰년 확인 필요</note></person>
+      <person xml:id="p_YuSunseon"><persName>유순선 柳順善</persName><birth when="1516"/><death when="1577"/></person>
+      <person xml:id="p_Giseonggun"><persName>기성군 이현 箕城君 李俔</persName><birth when="1543"/><death when="1568"/></person>
+      <person xml:id="p_JeongCheol"><persName>정철 鄭澈</persName><birth when="1536"/><death when="1593"/><note>정철은 선조 때 왕과 왕비의 친인척을 관리하는 돈녕부(敦寧府)에서 판돈녕부사와 영돈녕부사를 지낸 바가 있어, 그의 시 「對花漫吟」에서 스스로를 정돈녕鄭敦寧이라 지칭한 바 있음</note></person>
+      <person xml:id="p_KimSeongil"><persName>김성일 金誠一</persName><birth when="1538"/><death when="1593"/></person>
+      <person xml:id="p_KimGeugil"><persName>김극일 金克一</persName><birth when="1522"/><death when="1585"/></person>
+      <person xml:id="p_JoWon"><persName>조원 趙瑗</persName><birth when="1544"/><death when="1595"/><note>『국당배어』에는 趙瓊으로 표기되어 있으나, 『성소부부고』와 『지봉유설』에는 趙瑗으로 되어 있음</note></person>
+      <person xml:id="p_LeeOkbong"><persName>이옥봉</persName><note>『국당배어』에는 ‘이씨’라고만 되어 있으나 『성소부부고』와 『지봉유설』에는 ‘이옥봉’으로 이름이 밝혀져 있음</note></person>
+      <person xml:id="p_LeeJeonggu"><persName>이정구 李廷龜</persName><birth when="1564"/><death when="1635"/></person>
+      <person xml:id="p_ParkDongyeol"><persName>박동열 朴東說</persName><birth when="1564"/><death when="1622"/></person>
+      <person xml:id="p_HongSeobong"><persName>홍서봉 洪瑞鳳</persName><birth when="1572"/><death when="1645"/></person>
+      <person xml:id="p_LeeAnnul"><persName>이안눌 李安訥</persName><birth when="1571"/><death when="1637"/></person>
+      <person xml:id="p_GwonPil"><persName>권필 權韠</persName><birth when="1569"/><death when="1612"/></person>
+      <person xml:id="p_ChaCheollo"><persName>차천로 車天輅</persName><birth when="1556"/><death when="1615"/></person>
+      <person xml:id="p_KimHyeonseong"><persName>김현성 金玄成</persName><birth when="1542"/><death when="1621"/></person>
+      <person xml:id="p_HanHo"><persName>한호 韓濩</persName><birth when="1543"/><death when="1605"/></person>
+      <person xml:id="p_LeeHomin"><persName>이호민 李好閔</persName><birth when="1553"/><death when="1634"/></person>
+      <person xml:id="p_LeeSugwang"><persName>이수광 李睟光</persName><birth when="1563"/><death when="1628"/></person>
+      <!-- 중국·일본 인물 -->
+      <person xml:id="p_LiRusong"><persName>李如松</persName><birth when="1549"/><death when="1598"/></person>
+      <person xml:id="p_ZhaDashou"><persName>査大受</persName><note>생몰년 미상</note></person>
+      <person xml:id="p_ShenWeijing"><persName>沈惟敬</persName><death when="1597"/></person>
+      <person xml:id="p_Konishi"><persName>小西行長(平行長)</persName><birth when="1558" cert="medium"/><death when="1600"/></person>
+      <person xml:id="p_Genso"><persName>景轍玄蘇</persName><birth when="1537"/><death when="1611"/></person>
+      <person xml:id="p_ChenYin"><persName>陳寅</persName><note>생몰년 미상</note></person>
+      <person xml:id="p_YangHao"><persName>楊鎬</persName><death when="1629"/></person>
+      <person xml:id="p_LiYuan"><persName>李元</persName><note>생몰년 미상</note></person>
+      <person xml:id="p_ShiXing"><persName>石星</persName><birth when="1538"/><death when="1599"/></person>
+      <person xml:id="p_ShiWife"><persName>石星 夫人</persName><note>생몰년 미상</note></person>
+      <!-- 언급 인물(ref) -->
+      <person xml:id="p_LyuDongbin"><persName>呂洞賓</persName><note>唐 시기 신선으로 알려져 있음</note></person>
+      <person xml:id="p_Guanyu"><persName>關羽</persName><death when="0220"/></person>
+      <person xml:id="p_Zhuxi"><persName>朱熹</persName><birth when="1130"/><death when="1200"/></person>
+      <person xml:id="p_LinBu"><persName>林逋</persName><birth when="0967"/><death when="1028"/></person>
+      <person xml:id="p_Confucius"><persName>孔子</persName><birth when="-0551"/><death when="-0479"/></person>
+    </listPerson>
+  </standOff>
+
+  <text>
+    <body>
+      <div type="story" n="1">
+        <p><date type="reign" from="1567" to="1608">宣廟朝</date>, <persName ref="#p_ParkSun" role="main">朴思庵淳</persName>爲大提學, 人望不洽. 朴嘗有‘石逕筇音宿鳥知’之句, 時人謂之曰: “宿鳥亦能欺世目?” 蓋譏其不稱也. 當時主文者皆老師宿儒, 朴驟當其重任取譏固然而<date type="present">今</date>之典文衡者, 較之於朴, 又不翅天淵, 人才之汚下一言至於此哉? <date type="reign" from="1649" to="1659">孝宗朝</date>, 大提學圈點時, 有武官語人曰‘吾名恐亦在於薦草中’云, 聞者大笑.</p>
+      </div>
+
+      <div type="story" n="2">
+        <p><date type="reign" from="1418" to="1450" cert="medium"><persName ref="#k_Sejong" role="main">英廟</persName></date>設集賢殿, 揀文士有名者, 兼帶經筵, 引接講論. 凡文翰之事, 悉委任之. 早仕晚罷, 日官奏時, 然後乃得出. <date type="reign" from="1455" to="1468"><persName ref="#k_Sejo" role="main">光廟</persName></date>罷集賢殿, 稱兼藝文. <date type="reign" from="1469" to="1494"><persName ref="#k_Seongjong" role="main">成廟</persName></date>設弘官, 以本官兼經筵, 一日三接. 講訖, 從容問古今治亂. 又夜對, 有時三鼓而罷. 當時盛事, <date type="present">至今</date>傳說. <date type="reign" from="1506" to="1544">中廟</date>以後, 雖不如<date type="reign" from="1469" to="1494">成廟朝</date>, 幾復成廟之盛矣. 弘文錧官員出入時, 皀捸一人腰帶鑞佩, 前導. 有一學士戱之曰: “彼鑞佩中, 藏幾度唐瘧耶?” 蓋逐日進指講之難也, 一時傳笑. <date type="reign" from="1623" to="1627" cert="medium">仁祖初年</date>, 亦勤御經筵, 而<date type="ganzhi" when="1636">丙子</date>以後, 王候違豫, 經筵之已廢至十年, 本館官員只直宿而已. <date type="present">近來</date>稱閑官, 以弘文錧爲首焉.</p>
+      </div>
+
+      <div type="story" n="3">
+        <p><persName ref="#p_YangHui" role="main">梁參判喜</persName>, 工於詩. 嘗雪夜尋梅吟, 得‘雪打吟唇詩欲凍’之句, 久不能對, 遂忘不記. <date type="relative">十餘之後</date>, 夢有人來, 問曰: “子何不續‘詩欲凍’之句耶?” 仍微吟曰: ‘梅飄歌扇曲生香.’ 覺而異之, 遂成長律, 曰: ‘幽人要結歲寒盟, 獨訪江樓興轉狂. 雪打吟唇詩欲凍, 花飄歌扇曲生香. 人從銀漢橋邊過, 月掛瓊瑤窟裏凉. 明日日高風正急, 招魂何處覓餘芳.’</p>
+      </div>
+
+      <div type="story" n="4">
+        <p><date type="reign" from="1567" to="1608">宣廟朝</date><date type="relative" notBefore="1567" notAfter="1591">壬辰年前</date>, 漢江有濟川亭, 飛甍縹緲, 人不可階, 而有詩題其上云: 曾見前朝種季辰, 花開十二又回春. 詩題華表千年柱, 淚洒靑山一椈塵. 楓岸鍾群神勒寺, 烟簔晩笛廣陵津. 早明鼓枻驪江去, 樓上何人識<persName ref="#p_LyuDongbin" role="ref">洞賓</persName>. 詩亦不凡, 世莫能知. <date type="relative" notBefore="1567" notAfter="1591">壬辰年前</date>, 義州有相傳謠語云: 莫佐里坪盡爲江水所破, 白馬將軍從馬耳山來. 莫佐里坪, 乃州西城外大野, 城中人耕種處, 直接獜山堡, 而馬耳山與統軍亭相對, 漢地界也. 其後鴨綠江水漸漸南移, 食大野幾盡. <date type="ganzhi" when="1593">癸巳</date>, <persName ref="#p_LiRusong" role="main">李提督如松</persName>率大兵渡江, 其謠驗矣.</p>
+      </div>
+
+      <div type="story" n="5">
+        <p><date type="reign" from="1567" to="1608">宣廟</date><date type="ganzhi" when="1592">壬辰三月</date>望祭, 祭官班定, 忽 健元陵上有哽咽噓嘻之聲, 班中有一官言: 此何聲響? 一班之人皆言: 吾等亦聞是聲而不敢發言. 因此尋聞, 則聲自陵上而來, 祭官上下無不悚然. 自後或一日一數日一至, 盡一月不絶. <date type="relative" when="1592">五月</date>, 倭寇至, 積薪於丁字閣, 取火焚之, 柴盡燒而火自滅, 終不延爇. 如是者數次, 賊懼有神, 乃去.</p>
+      </div>
+
+      <div type="story" n="6">
+        <p><date type="era" when="1591">萬曆辛卯冬</date>, <persName ref="#p_RyuSeongryong" role="main">西厓柳公成龍</persName>得一夢, 景福宮延秋門灰燼, 公排徊其下, 傍有一人曰: 此宮卜地太平, 今若改作, 當稍高近山. 公驚覺, 不敢語人. <date type="relative" when="1592">明年壬辰</date>, 倭寇至, 車駕西幸, 宮闕皆灰燼. 衆疑恢復無望, 公始於親識中語其夢, 且曰: “夢中已議改作, 此乃恢復之兆也.” <date type="ganzhi" when="1593">癸巳</date>, 賊兵果退, 車駕還都.</p>
+        <note type="parallel">서애집</note>
+      </div>
+
+      <div type="story" n="7">
+        <p><date type="event" when="1592">壬辰之變</date>, 忠州敗報至. <persName ref="#k_Seonjo" role="main">宣廟</persName>下西巡之敖, 百官皆歸私第, 衛士一時散歸, 闕內寥落如空宮. 及曉, 天陰雨下, 咫尺黯慘. 車駕已備, 而仁和門外闃無人蹤. <persName ref="#p_Uiin" role="sub">內殿</persName>獨與女侍十餘人, 步出仁和門. 時, <persName ref="#p_LeeHangbok" role="main">白沙李公恒福</persName>以都承旨秉燭侍門外, 前導以出. 內殿顧問: “秉燭者何官?” 女侍曰: “都承旨<persName ref="#p_LeeHangbok" role="main">李某</persName>.” 內殿咨嗟慰諭. 及賊兵逼大同江, 大駕自寧邊將幸義州, 求爲內附. <persName ref="#k_Seonjo" role="main">宣廟</persName>欲自募人員, 問大臣, 大臣不對, 以次問幸臣, 莫有應者. 至李公, 公對曰: “臣年少無病, 無父母, 請隨駕.” 上曰: “卿若有難, 爭不可强行? 再加商量.” 公對曰: “此非臣今旦所辨口頭, 以塞 聖上一時之問也. 筮仕之初, 已有願忠之志; 及出國門, 誓以效死. 此志素定久矣.” <persName ref="#k_Seonjo" role="main">宣廟</persName>嘖嘖嗟歎良久焉.</p>
+      </div>
+
+      <div type="story" n="8">
+        <p><date type="ganzhi" when="1592">壬辰冬</date>, <persName ref="#p_LiRusong" role="main">提督李如松</persName>率大兵至安州. <persName ref="#p_RyuSeongryong" role="main">西厓柳公成龍</persName>, 以體察使袖平壤地啚, 請見論軍事. 旣退, 提督題詩扇面, 寄體察使云: “提兵星夜到江干, 爲說三韓國未安. 明主日懸旌節報, 微臣夜釋酒盃歡. 春來殺氣心猶壯, 此去妖氛骨已寒. 談笑敢言非勝算, 夢中常憶跨征鞍.” 提督使<persName ref="#p_ZhaDashou" role="sub">副摠兵査大受</persName>先往順安, 紿倭奴曰: “天朝已許和, <persName ref="#p_ShenWeijing" role="sub">沈游擊</persName>且至.” 蓋<persName ref="#p_ShenWeijing" role="sub">沈惟敬</persName>曾與倭將<persName ref="#p_Konishi" role="sub">平行長</persName>約誓而去, 故<persName ref="#p_Genso" role="sub">僧倭玄蘇</persName>獻詩云: “扶桑息戰服中華, 四海九州同一家. 喜氣還消寰外, 雪乾坤春早太平花.”</p>
+      </div>
+
+      <div type="story" n="9">
+        <p><persName ref="#p_JeongJak" role="main">古玉鄭公碏</persName>, 一代異人也. <date type="reign" from="1567" to="1608">宣廟朝</date><date type="ganzhi" when="1589">己丑年八九月</date>間, 勸<persName ref="#p_KangChan" role="sub">姜公燦</persName>乞郡居外, 曰: “不過數月, 朝庭大禍作. 縱不及汝, 不如遠避.” 仍言及<persName ref="#p_LeeHangbok" role="sub">李公恒福</persName>云: “此人當作黑頭宰相, 但念入相時, 國家當大亂, 必將搔首過日矣.” <date type="event" when="1589">逆獄</date>之起, <date type="event" when="1592">倭寇之來</date>, 皆如其言. 古玉, 駱洞人也. <date type="relative" notBefore="1592">壬辰亂後</date>, 駱洞題一絶句曰: “城郭周遭落日斜, 荒墟處處是誰家? 東風立馬新搞畔, 滿目傷心無主花.”</p>
+        <note type="parallel">백사집</note>
+      </div>
+
+      <div type="story" n="10">
+        <p><date type="era" when="1597">萬曆丁酉冬</date>, 天兵攻蔚山屯倭. <persName ref="#p_ChenYin" role="main">游擊將軍陳寅</persName>中賊丸, 載還漢都, 寓居崇禮門外, 調兵創起祠廟, 設<persName ref="#p_Guanyu" role="ref">漢壽亭侯關公</persName>神像. <persName ref="#p_YangHao" role="sub">經理楊鎬</persName>以下, 各出銀兩助其費, 我國亦助之. 廟成, 自 <persName ref="#k_Seonjo" role="sub">上</persName>亦往觀. 天朝將官出入, 必參拜, 皆曰: “爲東國求神助却賊.” <date type="relative" when="1598" cert="medium">五月十三日</date>, 大祭廟中, 云是關公生日. 若有雷風之異, 則神至云. 是日天氣清明, 午後黑雲四起, 大風自西北來, 雷雨並作, 有頃而止. 天將喜曰: “王神下臨矣.” 安東·星州亦建廟, 星州甚著靈異之迹云.</p>
+      </div>
+
+      <div type="story" n="11">
+        <p><date type="event" when="1592">壬辰倭變</date>, 有<persName ref="#p_JoIn" role="main">曹認</persName>者, 被擄入日本, 遇中原淅江人, 仍與相熟. 其人愍認心事, 謀脫回百計, 遂自日本逃至福建. 認頗解文識事, 處處問朝鮮士子從日本逃來, 待之甚厚, 引與游觀諸處. 入武夷山第五曲, 有<persName ref="#p_Zhuxi" role="ref">朱子</persName>書院. 院中學徒數百餘人, 院長每日率諸生講學·行禮·學規甚嚴. 晨起擊鍾, 諸生分相揖, 敬｢關雎｣三章, 登堂聽講, 日晚乃罷. 夕又相揖, 歌｢鹿鳴｣章, 日以爲常. 令認同參講席幾數月. 臨別, 諸生歌詩以贈之, 且云: “聞朝鮮以爲中原尙陸學, 間有如此者, 此處則專尙<persName ref="#p_Zhuxi" role="ref">晦庵</persName>之學, 須以所見歸語”云. 其他, 廬山·金山寺·西湖<persName ref="#p_LinBu" role="ref">林逋</persName>所居, 無不往見. 過魯, 拜<persName ref="#p_Confucius" role="ref">孔子</persName>廟, 入北京, 發還. 可謂極天下之奇觀也.</p>
+      </div>
+
+      <div type="story" n="12">
+        <p><date type="era" when="1600">萬曆庚子</date>, <persName ref="#p_Uiin" role="main">懿仁王后</persName>之喪, 因山未定, 邪說紛起, 累度改卜. 議用交河猪兒, 時當冬月, 忽陰雲大起, 暴雨雷電. 改議揚州獨墻, 時天又大雷電. 及定於健元陵, 翌日, 天忽暄暖如春, 氷澌土融云. 異哉!</p>
+      </div>
+
+      <div type="story" n="13">
+        <p>我國舊無火藥, <date type="period" notBefore="1370" notAfter="1392" cert="medium">高麗末</date>, 有<persName ref="#p_LiYuan" role="main">唐商李元</persName>舡到泊禮成江, 寄寓於<persName ref="#p_ChoeMuseon" role="main">軍器監崔茂宣</persName>奴家. 茂宣令其奴厚遇之, 李元敎以焰硝煮法, 我國之有火藥自茂宣始云.</p>
+        <note type="parallel">만기요람</note>
+      </div>
+
+      <div type="story" n="14">
+        <p><persName ref="#p_HongSuneon" role="main">唐陵君洪純彦</persName>, <date type="reign" from="1567" to="1608">宣廟朝</date>時譯官, 而解事識體, 有義氣, 喜施與, 蓋出乎其類者也. <!-- 年少時: '三十餘年後 萬曆甲申(1584)'에서 역산 --><date type="relative" notAfter="1554" cert="low">年少時</date>, 隨使臣赴北京, 行到通州, 夜遊靑樓, 謂主媼曰：“願得美娥, 度此良夜.” 媼曰：“此間有士族家女, 年纔十八. 素稱國色, 而時未經人, 價高難圖.” 洪曰：“幣銀多少, 不須論. 第言相見, 可也.” 主媼曰：“諾!” 而入良久, 引一叉鬟而出. 仙姿綽約, 眞絶代佳人, 而縞衣草草. 問曰：“聞主嫗言, 則娘子是士族. 而何故托身於靑樓? 又何故以衣白耶?” 女低頭斂容而答曰：“妾之父母, 本浙江人, 因仕宦寓居京師, 不幸遘癘疾, 父母一時俱沒. 又無兄弟, 一身零丁, 四顧無依. 旅襯在館, 返葬無計, 非不知倚樓之可恥蘊櫝之爲貴, 而要得例贈之錢, 以爲喪葬之需, 誠出於萬萬不得已而痛迫之事也.” 言畢, 哽咽泣下. 洪聞之愍然, 以爲：“我若近此女, 不義也.” 仍問：“返葬之費, 當用幾何?” 曰：“人言備百金, 則庶乎其足用.” 洪遂出其行中賚來銀子百兩以贈之. 女叩頭拜謝. 一行笑洪之仁. 三十餘年後, <date type="era" when="1584">萬曆甲申</date>, <persName ref="#p_HwangJeonguk" role="sub">芝川黃公廷彧</persName>以宗系辨誣使奉使赴京. 洪以首譯隨行, 到皇城外, 望見朝陽門前, 帳幕連雲, 威儀甚盛. 俄有一人馳來, 尋問洪判事. 仍言：“<persName ref="#p_ShiXing" role="sub">石侍郞</persName><persName ref="#p_ShiWife" role="main">夫人</persName>要與相見.” 洪驚惶錯愕, 莫知其所以. 及至帳幕外, 夫人入. 洪俯伏席端, 不敢仰視. 夫人曰：“君不知我耶? 昔在通州蒙君高義, 父母之喪, 得以返葬. 此感結在心曲久,  愈不敢忘也.” 盛備酒饍以饋一行. 洪再拜而退. 宗系汚衊, 累朝陳奏, 雖許改正而猶未詳悉. 至今行始得快雪, 會典所載, 特令謄示, 仍爲勅喩, 此固使臣善爲周旋之致, 而夫人之故, 侍郞亦宣力云. 逮竣事, 發還之日, 夫人贈以五色錦緞各二十匹. 洪詣侍郞宅, 固辭不受. 還到鴨綠江, 忽見擡扛軍隨至乃前, 送錦緞也. 洪又辭之, 領來曰：“夫人之命也.” 置諸江而去.  洪不得已具由白使臣領受. 還家之後, 見錦緞每匹末端, 刺成報恩緞三字. 洪譯急人之義可嘉, 而夫人之不忘其恩而必報之者如此, 尤可尙. 京中買錦者, 皆歸洪家, 仍名洪所居洞爲報恩緞洞. 厥後設洞名者, 年久訛傳云. <date type="ganzhi" when="1592">壬辰</date>倭寇至, 車駕西巡時, 皇朝論議, 或堅守鴨綠而觀其變, 或云夷狄相攻, 中國不必救. 唯<persName ref="#p_ShiXing" role="sub">兵部尙書石星</persName>力言朝鮮不可不救. 且請先賜軍器·火藥. 尙書對使臣言本國事, 往往流涕, 此固出於恤小扶弱之義, 亦以夫人之故如此云. 洪光國功封唐陵. 其孫<persName ref="#p_HongHyoson" role="sub">孝孫</persName><date type="event" when="1623">癸亥之反正</date>, 錄靖社勳, 拜肅川府使. 人以爲唐陵君種德之報云.</p>
+      </div>
+
+      <div type="story" n="15">
+        <p><persName ref="#p_YuSunseon" role="main">素齋柳公順善</persName>, 登第之初, 聲名未大著. 時 玉堂諸學士作詩酒契, 公聞之, 馳赴通剌座中, 使人問曰: “連飮十鍾, 每鍾賦長律一首者, 得預是契, 公可能之乎?” 公不答, 索紙筆書一句以設曰: “天寒滿酌吾能進, 只恨當年不學詩.” 一座歎服, 即爲延入, 仍許參契, 盡歡而罷. 公文章清麗, 咏戊杏接梅詩曰: “其奈梅殘杏盛開, 寧將伐杏接寒梅. 休嫌苟合非同氣, 要使潜移作笑材. 疇昔穠華歸寂寞, 異時踈影可徘徊, 後身絶勝前身處, 更有清香月下來.” 又有秋霜秋月賦, <date type="present">至今</date>膾炙人口.</p>
+      </div>
+
+      <div type="story" n="16">
+        <p><persName ref="#p_Giseonggun" role="sub">宗室箕城君</persName>宅, 在城東駱山下, 園林最稱奇勝. <persName ref="#p_JeongCheol" role="main">松江鄭相公澈</persName>, 罷泮宮課試, 仍往觀, 時清和節也. 醉吟一絶曰: “花殘白芍藥, 人老<persName ref="#p_JeongCheol" role="main">鄭敦寧</persName>. 對花仍對酒, 宜醉不宜醒.” 風流豪興可想.</p>
+      </div>
+
+      <div type="story" n="17">
+        <p><persName ref="#p_KimSeongil" role="main">金鶴峯誠一</persName>, 過海州芙蓉堂題一絶曰: “玉樓飛步趁輕凉, 爽氣朝來接奔蒼. 脚下芙容花未動, 水心蔵得幾莖香.” 刻板懸壁. <date type="event" when="1592">壬辰之亂</date>, 倭據本州, 盡撤壁上, 時獨留鶴峯所作. 蓋鶴峯<date type="event" when="1590">奉使日本時</date>, 倭人敬服, 故如此云. <persName ref="#p_KimGeugil" role="main">金藥峯克一</persName>, 鶴峯之兄也. 新寧縣竹軒題一絶句: “颯颯寒溪風, 蕭蕭枯竹雨. 夢驚掃地聲, 落葉應無數.” 詩才不下於其弟.</p>
+      </div>
+
+      <div type="story" n="18">
+        <p><persName ref="#p_LeeOkbong" role="main"><persName ref="#p_JoWon" role="sub">趙瓊</persName>之妻李氏</persName>,宗室之裔也, 能詩. 趙出宰三陟, 李隨往過寧越, 有一絶句: “五日長關三日越, 東風立馬<persName ref="#k_Danjong" role="ref">魯陵</persName>雲. 妾身亦是王孫女, 此地鵑聲不忍聞.” 杜鵑有詩故云.</p>
+        <note type="parallel">성소부부고</note>
+        <note type="parallel">지봉유설</note>
+      </div>
+
+      <div type="story" n="19">
+        <p><date type="era" when="1602">萬曆壬寅</date>, 天朝詔使出來, <persName ref="#p_LeeJeonggu" role="main">月沙李公廷⿔</persName>爲遠接使, 從使官<persName ref="#p_ParkDongyeol" role="main">南郭朴東說</persName>·<persName ref="#p_HongSeobong" role="main">鶴谷洪瑞鳳</persName>·<persName ref="#p_LeeAnnul" role="main">東岳李安訥</persName>, 製述官<persName ref="#p_GwonPil" role="main">石洲權鞸</persName>·<persName ref="#p_ChaCheollo" role="main">五山車天輅</persName>·<persName ref="#p_KimHyeonseong" role="main">南窓金玄成</persName>, 寫字官<persName ref="#p_HanHo" role="main">石峯韓濩</persName>, 延慰使<persName ref="#p_LeeHomin" role="main">五峯李好閔</persName>·<persName ref="#p_LeeSugwang" role="main">李睟光</persName>. <date type="reign" from="1567" to="1608">宣廟朝</date>人才之盛如此. 有東槎集行于世.</p>
+      </div>
+
+      <div type="story" n="20">
+        <p><persName ref="#p_RyuSeongryong" role="main">西厓柳成龍</persName>聞有<date type="event" when="1600" cert="medium">許復官爵之命</date>. 有詩云: “竹窓殘雪夜蕭蕭, 千里歸心故國遙. 白首縱霑新雨露, 豈宜重誤聖明朝.” 又云: “眼昏撥却看文字, 脚劣仍難上下床. 萬事從今皆放倒, 唯堪百結負朝陽.” 其詩, 冲澹可愛. <persName ref="#p_LeeHangbok" role="main">白沙李相公恒福</persName>, <date type="reign" from="1608" to="1623">光海朝</date>遞相, 退居東郊. <date type="ganzhi" when="1617">丁巳冬</date>, 廢妃之論已定, 公忼慨不食. 忽大雷撼屋, 公曰: “天其戒告之矣.” 俄而摳府即來收議, 公方病, 扶起奮筆以書議至見者泣下邸吏草公議手戰不能定筆三司請絕邊圍籬安置<date type="ganzhi" when="1618">戊午正月</date>竄北青親舊携壺送于郊外公口占一絶句曰: “雲日蕭蕭晝晦微, 北風吹裂遠征衣. 遼東城郭應依舊, 只恐令威去不歸.” <date type="relative" when="1618">到配五月</date>, 果卒.</p>
+      </div>
+    </body>
+  </text>
+</TEI>
